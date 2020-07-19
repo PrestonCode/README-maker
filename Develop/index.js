@@ -9,21 +9,77 @@ const askQuestions = () => {
     return inquirer.prompt([
         {
             type: "input",
-            name: "Title",
+            name: "title",
             message: "What do you want you title to be?"
         },
         {
             type: "input",
-            name: "Description",
+            name: "description",
             message: "What do you want you description to be?"
-        }
+        },
+        {
+            type: "confirm",
+            name: "tableOfContents",
+            message: "Do you want a table of contents? Will include installation, usage, contributing, license and, tests.(y/N)"
+        },
+        {
+            type: "input",
+            name: "installation",
+            message: "How do you instal it?"
+        },
+        {
+            type: "input",
+            name: "usage",
+            message: "How do you use it?"
+        },
+        {
+            type: "input",
+            name: "license",
+            message: "What can other develipers can and can't do with you project?"
+        },
+        {
+            type: "input",
+            name: "contributing",
+            message: "How can other develipers contribut to the pregect?"
+        },
+        {
+            type: "input",
+            name: "tests",
+            message: "How do you test if it works?"
+        },
     ])
 }
 // function to write README file
 function writeToFile(answers) {
     return `
-    #${answers.Title}
-    ${answers.Description}`;
+    #${answers.title}
+    
+    ##Description
+
+    ${answers.description}
+    
+    ##Table of Contents
+    
+    *
+    *
+    * 
+    * 
+
+    ## Installation
+    
+    ## Usage
+    
+    ## Credits
+    
+    ## License
+    
+    ## Badges
+    
+    ## Contributing
+    
+    ## Tests
+    
+    `
 }
 
 // function to initialize program

@@ -20,7 +20,7 @@ const askQuestions = () => {
         {
             type: "confirm",
             name: "tableOfContents",
-            message: "Do you want a table of contents? Will include installation, usage, contributing, license and, tests.(y/N)"
+            message: "Do you want a table of contents? Will include installation, usage, contributing, license and, tests."
         },
         {
             type: "input",
@@ -60,26 +60,31 @@ function writeToFile(answers) {
     
     ##Table of Contents
     
-    *
-    *
-    * 
-    * 
+    * [Installation] ## Installation
+    * [Usage] ## Usage
+    * [License] ## License
+    * [Contributing] ## Contributing
+    * [Tests] ## Tests
 
     ## Installation
+
+    ${answers.installation}
     
     ## Usage
-    
-    ## Credits
+
+    ${answers.usage}
     
     ## License
     
-    ## Badges
-    
+    ${answers.license}
+
     ## Contributing
+
+    ${answers.contributing}
     
     ## Tests
-    
-    `
+
+    ${answers.tests}`
 }
 
 // function to initialize program
@@ -97,4 +102,3 @@ askQuestions()
     });
 
 // function call to initialize program
-
